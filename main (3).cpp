@@ -1,3 +1,7 @@
+/*************************
+ * Автор: Бакланова Ляна *  
+ *************************/
+
 #include <iostream>
 #include <fstream>
 #include <map>
@@ -37,4 +41,5 @@ int main() {
   }
 
   return 0;
+
 }
