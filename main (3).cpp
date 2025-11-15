@@ -17,11 +17,11 @@ int main() {
   char prev = '\0', current;
   
   while (file >> current) {
-    letterCount[current]++;
+    ++letterCount[current];
     
     if (prev != '\0') {
       string comb = string(1, prev) + current;
-      combCount[comb]++;
+      ++combCount[comb];
     }
     prev = current;
   }
@@ -29,17 +29,16 @@ int main() {
   cout << "Letter frequency:\n";
   for (auto entry : letterCount) {
     if (entry.second > 1) {
-      cout << "'" << entry.first << "': " << entry.second <<" repeats" << endl;
+      cout << "'" << entry.first << "': " << entry.second - 1 << " repeats" << endl;
     }
   }
 
   cout << "\nTwo-letter combinations:\n";
   for (auto entry : combCount) {
     if (entry.second > 1) {
-      cout << "\"" << entry.first << "\": " << entry.second << " repeats" << endl;
+      cout << "\"" << entry.first << "\": " << entry.second - 1 << " repeats" << endl;
     }
   }
 
   return 0;
-
 }
