@@ -27,16 +27,16 @@ int main() {
   }
 
   cout << "Letter frequency:\n";
-  for (auto entry : letterCount) {
-    if (entry.second > 1) {
-      cout << "'" << entry.first << "': " << entry.second - 1 << " repeats" << endl;
+  for (auto letterIter = letterCount.begin(); letterIter != letterCount.end(); ++letterIter) {
+    if (letterIter->second > 1) {
+      cout << "'" << letterIter->first << "': " << letterIter->second - 1 << " repeats" << endl;
     }
   }
 
   cout << "\nTwo-letter combinations:\n";
-  for (auto entry : combCount) {
-    if (entry.second > 1) {
-      cout << "\"" << entry.first << "\": " << entry.second - 1 << " repeats" << endl;
+  for (auto combIter = combCount.begin(); combIter != combCount.end(); ++combIter) {
+    if (combIter->second > 1) {
+      cout << "\"" << combIter->first << "\": " << combIter->second - 1 << " repeats" << endl;
     }
   }
 
