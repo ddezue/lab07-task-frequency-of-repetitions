@@ -9,18 +9,20 @@
 using namespace std;
 
 int main() {
+  string comb;
+  char prev = '\0';
+  char current;
+
   ifstream file("text.txt");
 
   map<char, int> letterCount;
   map<string, int> combCount;
-  
-  char prev = '\0', current;
-  
+
   while (file >> current) {
     ++letterCount[current];
-    
+
     if (prev != '\0') {
-      string comb = string(1, prev) + current;
+      comb = string(1, prev) + current;
       ++combCount[comb];
     }
     prev = current;
